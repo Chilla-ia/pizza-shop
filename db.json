@@ -3,7 +3,12 @@
     {
       "id": 1,
       "name": "4 fromages",
-      "ingredients": ["Tomate", "Chevre", "Mozzarella", "Gorgonzola"],
+      "ingredients": [
+        "Tomate",
+        "Chevre",
+        "Mozzarella",
+        "Gorgonzola"
+      ],
       "imageUrl": "https://picsum.photos/350",
       "price": 12.99
     },
@@ -24,28 +29,48 @@
     {
       "id": 3,
       "name": "4 fromages",
-      "ingredients": ["Tomate", "Chevre", "Mozzarella", "Gorgonzola"],
+      "ingredients": [
+        "Tomate",
+        "Chevre",
+        "Mozzarella",
+        "Gorgonzola"
+      ],
       "imageUrl": "https://picsum.photos/350",
       "price": 12.99
     },
     {
       "id": 4,
       "name": "4 fromages",
-      "ingredients": ["Tomate", "Chevre", "Mozzarella", "Gorgonzola"],
+      "ingredients": [
+        "Tomate",
+        "Chevre",
+        "Mozzarella",
+        "Gorgonzola"
+      ],
       "imageUrl": "https://picsum.photos/350",
       "price": 12.99
     },
     {
       "id": 5,
       "name": "4 fromages",
-      "ingredients": ["Tomate", "Chevre", "Mozzarella", "Gorgonzola"],
+      "ingredients": [
+        "Tomate",
+        "Chevre",
+        "Mozzarella",
+        "Gorgonzola"
+      ],
       "imageUrl": "https://picsum.photos/350",
       "price": 12.99
     },
     {
       "id": 6,
       "name": "4 fromages",
-      "ingredients": ["Tomate", "Chevre", "Mozzarella", "Gorgonzola"],
+      "ingredients": [
+        "Tomate",
+        "Chevre",
+        "Mozzarella",
+        "Gorgonzola"
+      ],
       "imageUrl": "https://picsum.photos/350",
       "price": 12.99
     }
