@@ -11,7 +11,11 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header shoppingCartCount={3} />
-      <PizzaCard name="4 fromages" />
+      <PizzaCard
+        name="4 fromages"
+        ingredients={["Tomate", "Chevre", "Mozzarella", "Gorgonzola"]}
+        price={12.99}
+      />
     </ThemeProvider>
   );
 }
