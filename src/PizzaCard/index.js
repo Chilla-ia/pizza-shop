@@ -15,7 +15,7 @@ const useStyles = makeStyles({
 
 export default function PizzaCard({ name, ingredients, price, imageUrl }) {
   const classes = useStyles();
-
+  console.log({ ingredients });
   return (
     <Card className={classes.root}>
       {imageUrl && (
@@ -43,6 +43,7 @@ export default function PizzaCard({ name, ingredients, price, imageUrl }) {
 }
 
 PizzaCard.propTypes = {
+  id: number,
   name: string.isRequired,
   ingredients: arrayOf(string).isRequired,
   price: number.isRequired,

@@ -4,19 +4,16 @@ import { ThemeProvider } from "@material-ui/core/styles";
 
 import { theme } from "./theme";
 import Header from "../Header";
-import PizzaCard from "../PizzaCard";
+import PizzaList from "../PizzaList";
+import db from "../db.json";
 
 export default function App() {
+  const pizzas = db.pizzas;
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header shoppingCartCount={3} />
-      <PizzaCard
-        name="4 fromages"
-        ingredients={["Tomate", "Chevre", "Mozzarella", "Gorgonzola"]}
-        imageUrl="https://picsum.photos/350"
-        price={12.99}
-      />
+      <PizzaList data={pizzas} />
     </ThemeProvider>
   );
 }
