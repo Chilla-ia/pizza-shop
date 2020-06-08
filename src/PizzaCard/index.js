@@ -7,11 +7,12 @@ import Price from "../Price";
 
 const imgSize = 175;
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: imgSize,
+    margin: `${theme.spacing(2)}px auto`,
   },
-});
+}));
 
 export default function PizzaCard({ name, ingredients, price, imageUrl }) {
   const classes = useStyles();
