@@ -14,6 +14,12 @@ export default function App() {
       <PizzaCard
         name="4 fromages"
         ingredients={["Tomate", "Chevre", "Mozzarella", "Gorgonzola"]}
+        imageUrl="https://picsum.photos/350"
+        price={12.99}
+      />
+      <PizzaCard
+        name="4 fromages"
+        ingredients={["Tomate", "Chevre", "Mozzarella", "Gorgonzola"]}
         price={12.99}
       />
     </ThemeProvider>
