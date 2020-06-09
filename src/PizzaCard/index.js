@@ -1,7 +1,14 @@
 import React from "react";
-import { Card, CardContent, CardMedia, Typography } from "@material-ui/core";
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  CardActions,
+  Button,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { arrayOf, number, string } from "prop-types";
+import { arrayOf, number, string, func } from "prop-types";
 
 import Price from "../Price";
 
@@ -9,12 +16,18 @@ const imgSize = 175;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: imgSize,
-    margin: `${theme.spacing(2)}px auto`,
+    margin: `${theme.spacing(2)}px`,
   },
+  button: { flexGrow: 1 },
 }));
 
-export default function PizzaCard({ name, ingredients, price, imageUrl }) {
+export default function PizzaCard({
+  name,
+  ingredients,
+  price,
+  imageUrl,
+  addToCart,
+}) {
   const classes = useStyles();
   console.log({ ingredients });
   return (
@@ -39,6 +52,18 @@ export default function PizzaCard({ name, ingredients, price, imageUrl }) {
           <Price value={price} />
         </Typography>
       </CardContent>
+      <CardActions>
+        <Button
+          className={classes.button}
+          color="primary"
+          variant="contained"
+          onClick={() => {
+            addToCart(name);
+          }}
+        >
+          Ajouter
+        </Button>
+      </CardActions>
     </Card>
   );
 }
@@ -49,8 +74,10 @@ PizzaCard.propTypes = {
   ingredients: arrayOf(string).isRequired,
   price: number.isRequired,
   imageUrl: string,
+  addToCart: func,
 };
 
 PizzaCard.defaultProps = {
   imageUrl: null,
+  addToCart: Function.prototype,
 };
