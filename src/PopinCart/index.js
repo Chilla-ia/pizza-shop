@@ -1,15 +1,20 @@
-import { bool } from "prop-types";
+import { bool, func } from "prop-types";
 import React from "react";
 
 import Popin from "../Popin";
 
-export default function PopinCart({ open }) {
+export default function PopinCart({ open, hidePopinCart }) {
   const actions = [
-    { label: "Annuler", primary: false },
+    { label: "Annuler", onClick: hidePopinCart },
     { label: "Commander", primary: true },
   ];
   return (
-    <Popin open={open} title="Passer commande" actions={actions}>
+    <Popin
+      open={open}
+      onClose={hidePopinCart}
+      title="Passer commande"
+      actions={actions}
+    >
       Récapitulatif des pizzas en commande
     </Popin>
   );
@@ -17,7 +22,9 @@ export default function PopinCart({ open }) {
 
 PopinCart.propTypes = {
   open: bool,
+  hidePopinCart: func,
 };
 PopinCart.defaultProps = {
   open: false,
+  hidePopinCart: Function.prototype,
 };

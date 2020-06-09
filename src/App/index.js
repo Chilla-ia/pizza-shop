@@ -19,13 +19,20 @@ export default function App() {
   const { status, data } = useQuery("pizzas", fetchPizzas);
   const [popinCartOpen, setPopinCardOpen] = React.useState(false);
 
+  const displayPopinCart = () => {
+    setPopinCardOpen(true);
+  };
+  const hidePopinCart = () => {
+    setPopinCardOpen(false);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header shoppingCartCount={3} />
+      <Header shoppingCartCount={3} displayPopinCart={displayPopinCart} />
       {status === "loading" && <CircularProgress />}
       {status === "success" && <PizzaList data={data} />}
-      <PopinCart open={popinCartOpen} />
+      <PopinCart open={popinCartOpen} hidePopinCart={hidePopinCart} />
     </ThemeProvider>
   );
 }
