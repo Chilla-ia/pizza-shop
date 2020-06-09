@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function PizzaCard({
+  id,
   name,
   ingredients,
   price,
@@ -29,7 +30,6 @@ export default function PizzaCard({
   addToCart,
 }) {
   const classes = useStyles();
-  console.log({ ingredients });
   return (
     <Card className={classes.root}>
       {imageUrl && (
@@ -58,7 +58,7 @@ export default function PizzaCard({
           color="primary"
           variant="contained"
           onClick={() => {
-            addToCart(name);
+            addToCart({ id, name, price, addedAt: Date.now() });
           }}
         >
           Ajouter
